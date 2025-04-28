@@ -1,0 +1,120 @@
+/* Fundo com degradê estilizado */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+  background: linear-gradient(135deg, #0d0d2b, #1a1a40);
+}
+
+/* Fundo extra */
+.background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background: linear-gradient(145deg, #0a0a23, #1e1e3f);
+}
+
+/* Container principal */
+main.constellation {
+  max-width: 600px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 2;
+}
+
+/* Título */
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #ffcc99;
+  margin-bottom: 0.5rem;
+}
+
+/* Subtítulo */
+.subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #ddd;
+  margin-bottom: 2rem;
+}
+
+/* Blocos tipo constelação */
+.star-block {
+  margin-bottom: 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1.5rem;
+  border-left: 3px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.star-block h2 {
+  color: #ffd699;
+  margin-bottom: 0.5rem;
+}
+
+.star-block p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #eee;
+}
+
+/* Área do botão */
+.button-area {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+#stellarium-button {
+  background: linear-gradient(135deg, #ff7a18, #af6e7d);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#stellarium-button:hover {
+  background: linear-gradient(135deg, #af6e7d, #ff7a18);
+}
+
+/* Estrelas caindo */
+.stars-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.star {
+  position: absolute;
+  color: #ffd43b;
+  font-size: 1.2rem;
+  animation: fall linear infinite;
+  opacity: 0.9;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-50px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
